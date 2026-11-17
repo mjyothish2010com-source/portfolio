@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio of M. Jyothish, a first-year diploma student.">
+  <title>M. Jyothish | Student Portfolio</title>
+  <style>
+    :root {
+      --bg: #08090d;
+      --panel: #11131b;
+      --text: #f5f6fa;
+      --muted: #a7adbd;
+      --accent: #8b7cff;
+      --accent2: #37d6c0;
+      --line: rgba(255,255,255,.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(ellipse at 80% 0%, rgba(139,124,255,.15), transparent 35%), var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, 90%); margin: auto; }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: rgba(8,9,13,.88); backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    nav { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .logo { font-size: 1.15rem; font-weight: 800; letter-spacing: 1px; }
+    .logo span { color: var(--accent); }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 25px; list-style: none; }
+    .nav-links a { color: var(--muted); font-size: .94rem; transition: color .2s; }
+    .nav-links a:hover { color: var(--accent2); }
+    .hero { min-height: 78vh; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(220px, .65fr); align-items: center; gap: 48px; padding: 80px 0; }
+    .hero-content { max-width: 760px; }
+    .hero-photo { justify-self: end; width: min(100%, 300px); aspect-ratio: 4 / 5; object-fit: cover; object-position: center top; border-radius: 22px; border: 1px solid rgba(255,255,255,.18); box-shadow: 0 22px 60px rgba(0,0,0,.45), 0 0 35px rgba(139,124,255,.16); }
+    .eyebrow { color: var(--accent2); text-transform: uppercase; letter-spacing: 3px; font-size: .78rem; font-weight: 700; }
+    h1 { font-size: clamp(3rem, 8vw, 6rem); line-height: 1.04; margin: 18px 0; letter-spacing: -3px; }
+    h1 span { color: var(--accent); }
+    .intro { color: var(--muted); font-size: clamp(1rem, 2vw, 1.2rem); max-width: 620px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+    .btn { display: inline-block; padding: 12px 20px; border-radius: 9px; font-weight: 700; border: 1px solid var(--accent); transition: transform .2s, background .2s; }
+    .btn.primary { background: var(--accent); color: #08090d; }
+    .btn.secondary { color: var(--text); }
+    .btn:hover { transform: translateY(-3px); }
+    section { padding: 78px 0; }
+    .section-tag { color: var(--accent2); text-transform: uppercase; letter-spacing: 2px; font-size: .75rem; font-weight: 700; }
+    h2 { font-size: clamp(2rem, 4vw, 3rem); margin: 8px 0 28px; }
+    .about-card, .skill-card, .contact-card {
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.018));
+      border: 1px solid var(--line); border-radius: 18px; padding: 28px;
+    }
+    .about-card p { color: var(--muted); max-width: 800px; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .skill-card { min-height: 170px; transition: border-color .2s, transform .2s; }
+    .skill-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+    .skill-icon { font-size: 1.8rem; margin-bottom: 12px; }
+    .skill-card h3 { margin-bottom: 7px; }
+    .skill-card p { color: var(--muted); font-size: .94rem; }
+    .college { color: var(--muted); margin-top: 14px; }
+    .contact-card { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; }
+    .contact-card p { color: var(--muted); }
+    .phone { color: var(--accent2); font-size: 1.25rem; font-weight: 700; }
+    footer { border-top: 1px solid var(--line); padding: 24px 0; text-align: center; color: var(--muted); font-size: .88rem; }
+    @media (max-width: 700px) {
+      nav { padding: 16px 0; align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 15px; }
+      .hero { min-height: 68vh; grid-template-columns: 1fr; gap: 30px; }
+      .hero-photo { justify-self: start; width: min(260px, 75vw); }
+      .grid { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.5px; }
+      section { padding: 58px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a class="logo" href="#home">M.J<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills &amp; Hobbies</a></li>
+        <li><a href="#college">College</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">First-Year Diploma Student</p>
+        <h1>Hello, I'm<br><span>M. Jyothish.</span></h1>
+        <p class="intro">Welcome to my personal portfolio! I am a first-year diploma student who enjoys learning new things, playing games and watching movies.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#about">Explore My Portfolio</a>
+          <a class="btn secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="data:image/jpeg;base64,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" alt="Portrait photo of M. Jyothish">
+    </section>
+
+    <section class="container" id="about">
+      <p class="section-tag">A little about me</p>
+      <h2>About Me</h2>
+      <div class="about-card">
+        <p>My name is <strong>M. Jyothish</strong>. I am studying in the first year of diploma at AANM &amp; VVRSR Polytechnic College, Gudlavalleru. I am interested in studying, playing and exploring new things. This website is a small introduction to me and my interests.</p>
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <p class="section-tag">What I enjoy</p>
+      <h2>My Skills &amp; Hobbies</h2>
+      <div class="grid">
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">🎮</div>
+          <h3>Playing</h3>
+          <p>I enjoy playing games and taking part in fun activities.</p>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">📚</div>
+          <h3>Studying</h3>
+          <p>I like learning new topics and improving my knowledge.</p>
+        </article>
+        <article class="skill-card">
+          <div class="skill-icon" aria-hidden="true">🎬</div>
+          <h3>Watching Movies</h3>
+          <p>I enjoy watching movies in my free time.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="college">
+      <p class="section-tag">My education</p>
+      <h2>My College</h2>
+      <div class="about-card">
+        <h3>AANM &amp; VVRSR Polytechnic College</h3>
+        <p class="college">Gudlavalleru, Andhra Pradesh</p>
+        <p>I am currently pursuing my first-year diploma studies here.</p>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <p class="section-tag">Let's connect</p>
+      <h2>Contact Me</h2>
+      <div class="contact-card">
+        <div>
+          <h3>Feel free to contact me</h3>
+          <p>Thank you for visiting my portfolio.</p>
+        </div>
+        <a class="phone" href="tel:9390925240">9390925240</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 M. Jyothish · Personal Portfolio</div>
+  </footer>
+</body>
+</html>
